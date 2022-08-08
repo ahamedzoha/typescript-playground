@@ -2,9 +2,18 @@
 import './style.css';
 
 // Write TypeScript code!
-const appDiv: HTMLElement = document.getElementById('app');
-appDiv.innerHTML = `<h1>TypeScript s</h1>`;
+const body: HTMLElement = document.querySelector("#app")
 
-const adder = (a : string | number, b: string | number) => {
-  return a + b
+const combineAdd = (a: string | number, b: string | number) => {
+  let result;
+  if (typeof a === 'number' || typeof b === 'number') {
+    result = +a + +b;
+  } else {
+    result = a.toString() + b.toString();
+  }
+  return result;
 };
+
+
+
+body.innerHTML= `<h2>${combineAdd("Mary", "Had")}</h2>`
